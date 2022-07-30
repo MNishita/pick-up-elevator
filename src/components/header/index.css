@@ -1,11 +1,12 @@
-.icon {
+.header .icon {
     float: left;
+    padding-left: 15px;
 }
 
-div {
+.header {
     background-color: #CC0000;
     color: white;
-    padding: 3px;
+    padding: 7px;
     font-size: 20px;
     font-weight: 700;
 }
