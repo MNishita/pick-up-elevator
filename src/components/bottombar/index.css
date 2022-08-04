@@ -3,10 +3,11 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    flex: 0.1;
 }
 
 .footer p {
     color: #9C9C9C;
     text-align: right;
-    padding: 1px 15px;
+    padding: 15px;
 }
