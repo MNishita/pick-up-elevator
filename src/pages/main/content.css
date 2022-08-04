@@ -7,13 +7,13 @@
     margin-bottom: 40px;
 }
 
-h2 {
+.content h2 {
     color: #CC0000;
     font-weight: 750;
     font-size: 20px;
 }
 
-p {
+.content p {
     margin-top: -15px;
     font-size: 15px;
     font-weight: 600;
@@ -56,11 +56,11 @@ p {
         margin-bottom: 60px;
     }
     
-    h2 {
+    .content h2 {
         font-size: 17px;
     }
     
-    p {
+    .content p {
         margin-top: -10px;
         font-size: 11px;
         font-weight: 600;

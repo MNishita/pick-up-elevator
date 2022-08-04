@@ -1,0 +1,59 @@
+.container{
+    flex:0.8;
+}
+
+.head {
+    text-align: left;
+    padding: 10px 50px;
+    font-weight: 700;
+    font-size: large;
+}
+
+.details{
+    display: flex;
+    margin: 0 30px;
+    font-size: 17px;
+}
+
+.section-1, .section-2{
+    background-color: #fafafa;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.section-1 {
+    display: flex;
+    width: 80%;
+}
+
+.section-1 .left {
+    text-align: left;
+    width: 80%;
+    margin: 10px 10px 0px 50px;
+}
+
+.section-1 .right {
+    margin: 10px 0px 0px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+}
+
+.text{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+#bottom {
+    margin-top: 60px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
