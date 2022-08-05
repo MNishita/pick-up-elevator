@@ -1,8 +1,8 @@
 import React from "react";
-import "./content.css";
-import MyImage from "./Heart-Target.webp";
+import "./homepage.css";
+import MyImage from "../../assets/Heart-Target.svg";
 
-function Content() {
+function Homepage() {
     return(
         <div className="main-container">
             <div>
@@ -31,4 +31,4 @@ function Content() {
         </div>
     )
 }
-export default Content
+export default Homepage

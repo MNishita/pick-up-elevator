@@ -1,7 +1,7 @@
 import React from "react";
 import "./order-details.css";
-import Image from "./image.svg";
-import Tick from "./tick.svg";
+import Image from "../../assets/image.svg";
+import Tick from "../../assets/tick.svg";
 
 function Order() {
     return(

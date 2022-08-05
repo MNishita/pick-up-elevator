@@ -5,7 +5,7 @@ import {FaBars} from "react-icons/fa";
 function Header() {
     return (<div className="header">
         <FaBars className="icon"/>
-        Target Pick
+        Easy Pick
     </div>)
 }
 export default Header

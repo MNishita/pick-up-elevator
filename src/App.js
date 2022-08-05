@@ -1,14 +1,14 @@
 import './App.css';
 import Header from './components/header';
 import Footer from './components/bottombar';
-import Content from './pages/main/content';
+import Homepage from './pages/main/homepage';
 import Order from './pages/order/order-details';
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Order/>
+      <Homepage/>
       <Footer/>
     </div>
   );
