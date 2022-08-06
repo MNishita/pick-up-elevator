@@ -16,13 +16,13 @@
 }
 
 .section-1, .section-2{
+    display: flex;
     background-color: #fafafa;
     margin: 0 10px;
     padding: 10px;
 }
 
 .section-1 {
-    display: flex;
     width: 80%;
 }
 
@@ -39,8 +39,12 @@
     justify-content: space-between;
 }
 
+.payment {
+    margin-top: 120px;;
+    margin-bottom: 15px;
+}
+
 .section-2 {
-    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 20%;
@@ -56,4 +60,81 @@
     margin-top: 60px;
     margin-bottom: 10px;
     font-weight: 700;
+}
+
+.button {
+    background-color: #cc0000;
+    color: white;
+    font-size: large;
+}
+
+@media screen and (max-width:1130px) {
+
+    .section-1 {
+        width: 70%;
+    }
+
+    .section-1 .right {
+        margin: 10px 0px 0px 10px;
+    }
+
+    .section-1 .left {
+        width: 70%;
+        margin: 10px 10px 0px 50px;
+    }
+
+    .section-2 {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:480px) {
+
+    .head {
+        padding: 5px 20px;
+        margin: 5px;
+    }
+
+    .details{
+        display: inline;
+    }
+
+    .section-1, .section-2{
+        margin: 5px auto;
+        padding: 10px 15px;
+    }
+
+    .section-1 {
+        width: 85%;
+        flex-wrap: wrap;
+    }
+
+    .section-1 .left {
+        width: 50%;
+        margin: 10px;
+    }
+
+    .section-1 .right {
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+    .payment {
+        margin: 10px;
+    }
+
+    .section-2 {
+        width: 85%;
+    }
+
+    .text{
+        margin: 0 5px;
+        padding: 5px;
+    }
+
+    #bottom {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
 }
