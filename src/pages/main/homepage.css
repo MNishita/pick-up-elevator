@@ -33,12 +33,17 @@
     height: 29px;
 }
 
-.button {
-    padding: 10px 100px;
-    margin: 20px;
-    background: #f6f6f6;
+.button{
+    background-color: #CC0000;
+    border-radius: 4px;
+    size: 50px;
+    color: white;
     border: #f6f6f6;
-    color: #797979;
+    padding: 10px 100px;
+}
+.button:hover{
+    background-color: #e81a1a;
+
 }
 
 @media screen and (max-width:480px) {
