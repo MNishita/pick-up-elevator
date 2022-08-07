@@ -2,6 +2,7 @@ import React from "react";
 import "./order-details.css";
 import Image from "../../assets/image.svg";
 import Tick from "../../assets/tick.svg";
+import Qr from "../../assets/qrcode.svg";
 
 function Order() {
     return(
@@ -23,7 +24,7 @@ function Order() {
                     </span>
                     <span className="payment">
                         Payment Done 
-                        <img style={{paddingLeft:20}} src={Tick} height={17} ></img>
+                        <img style={{paddingLeft:15}} src={Tick} height={17} ></img>
                     </span>
                 </div>
             </div>
@@ -47,9 +48,10 @@ function Order() {
             </div>
         </section>
         <div>
-            <form>
-                <input className="button" type="button" value="Ready to Pick"></input>
-            </form>
+            <button>
+                <span className="button-text">Ready to Pick</span>
+                <img className="qr" src={Qr}></img>
+            </button>
         </div>
     </div>
     )

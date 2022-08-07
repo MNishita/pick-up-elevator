@@ -62,10 +62,19 @@
     font-weight: 700;
 }
 
-.button {
-    background-color: #cc0000;
-    color: white;
-    font-size: large;
+button {
+    font-size: 25px;
+    padding: 10px 100px;
+    margin: 20px;
+    background: #f6f6f6;
+    border: #f6f6f6;
+    color: #797979;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.qr {
+    display: none;
 }
 
 @media screen and (max-width:1130px) {
@@ -96,11 +105,12 @@
     }
 
     .details{
-        display: inline;
+        display: inline-block;
+        margin: 0 5px;
     }
 
     .section-1, .section-2{
-        margin: 5px auto;
+        margin: 10px auto;
         padding: 10px 15px;
     }
 
@@ -136,5 +146,28 @@
         margin-top: 20px;
         margin-bottom: 10px;
         font-weight: 700;
+    }
+
+    button {
+        padding: 15px;
+        margin: 10px auto;
+        background: #cc0000;
+        color: white;
+        width: 85%;
+    }
+
+    .button-text {
+        padding-top: 4px;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    button:hover .qr {
+        display: inline-block;
+    }
+
+    button:hover{
+        display: flex;
+        justify-content: space-between;
     }
 }
