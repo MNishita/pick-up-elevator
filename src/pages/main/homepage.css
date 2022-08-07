@@ -39,9 +39,10 @@
     background: #f6f6f6;
     border: #f6f6f6;
     color: #797979;
+    font-size: medium;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:490px) {
     .main-container {
         margin: 100px 20px;
     }
