@@ -50,7 +50,7 @@ function Order() {
         <div>
             <button>
                 <span className="button-text">Ready to Pick</span>
-                <img className="qr" src={Qr}></img>
+                <img className="qr" src={Qr} height={30} width={30}></img>
             </button>
         </div>
     </div>
