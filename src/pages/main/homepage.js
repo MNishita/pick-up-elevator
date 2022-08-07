@@ -1,8 +1,12 @@
 import React from "react";
 import "./homepage.css";
 import MyImage from "../../assets/Heart-Target.svg";
+import {useNavigate} from 'react-router-dom';
 
 function Homepage() {
+
+    let navigate = useNavigate();
+
     return(
         <div className="main-container">
             <div>
@@ -25,7 +29,9 @@ function Homepage() {
                     </label>
                     <input type="text" name="text" className="form-text"/>
                 </div>
-                <input className="button" type="submit" value="Search"/>
+                <button className="button" onClick={()=>{navigate("/orderdetails")}}>
+                    Search
+                </button>
                 </form>
             </div>
         </div>
