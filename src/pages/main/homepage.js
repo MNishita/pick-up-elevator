@@ -13,7 +13,7 @@ function Homepage() {
                 <img className="logo" src={MyImage} alt="Heart" height={150} width={150}></img>
                 <div className="content">
                 <h2>Service with Heart</h2>
-                <p>Make it easy for guests to fell welcomed, inspired and rewarded</p>
+                <p>Make it easy for guests to feel welcomed, inspired and rewarded</p>
                 </div>
             </div>
             <div>
