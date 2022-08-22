@@ -1,0 +1,8 @@
+import React from "react";
+function IndividualOrder(){
+    return (<div>
+        <p>This is an individual order</p>
+    </div>)
+}
+
+export default IndividualOrder;
