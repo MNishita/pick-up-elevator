@@ -10,11 +10,7 @@ function Homepage() {
     return(
         <div className="main-container">
             <div>
-                <img className="logo" src={MyImage} alt="Heart" height={150} width={150}></img>
-                <div className="content">
-                <h2>Service with Heart</h2>
-                <p>Make it easy for guests to feel welcomed, inspired and rewarded</p>
-                </div>
+                <img className="logo" src={MyImage} alt="Heart" height={450} width={450}></img>
             </div>
             <div>
                 <form>
