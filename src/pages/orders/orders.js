@@ -1,5 +1,5 @@
 import React from "react";
-import "./order-details.css";
+import "./orders.css";
 import Image from "../../assets/image.svg";
 import Tick from "../../assets/tick.svg";
 import Qr from "../../assets/qrcode.svg";

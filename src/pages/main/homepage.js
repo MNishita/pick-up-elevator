@@ -29,7 +29,7 @@ function Homepage() {
                     </label>
                     <input type="text" name="text" className="form-text"/>
                 </div>
-                <button className="button" onClick={()=>{navigate("/orderdetails")}}>
+                <button className="button" onClick={()=>{navigate("/orders")}}>
                     Search
                 </button>
                 </form>
