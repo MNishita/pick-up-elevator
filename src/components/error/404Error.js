@@ -1,5 +1,5 @@
 import React from "react";
-import "../error/404Error.css";
+import "./404Error.css";
 import {useNavigate} from 'react-router-dom';
 
 function Error() {
@@ -19,3 +19,4 @@ function Error() {
     )
 }
 export default Error
+
