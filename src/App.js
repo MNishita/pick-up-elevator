@@ -5,9 +5,9 @@ import Header from './components/header';
 import Footer from './components/bottombar';
 import Homepage from './pages/main/homepage';
 import Order from './pages/orders/orders';
-import OrderDetails from './pages/orderdetails/order-details';
 import PageNotFound from './pages/404';
 import QRgererator from './pages/QRdetails/Qr';
+import AddOrder from './services/postOrders'
 
 import { QueryClientProvider, QueryClient ,useMutation,useQueryClient,
   useQuery} from '@tanstack/react-query'
@@ -18,16 +18,16 @@ const queryClient = new QueryClient()
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      {/* <Todos /> */}
+
       <div className="App">
         <Header />
         <Router>
           <Routes>
             <Route path='/' element={<Homepage />} />
             <Route path='/homepage' element={<Homepage />} />
-            <Route path='/orders' element={<Order />} />
-            <Route path='/orders/:orderId' element={<OrderDetails />} />
+            <Route path='/order' element={<Order />} />
             <Route path='/qr' element={<QRgererator />} />
+            <Route path='/post' element={<AddOrder />}/>
             <Route path='/*' element={<PageNotFound />} />
           </Routes>
         </Router>

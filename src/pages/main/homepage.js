@@ -21,18 +21,17 @@ function Homepage() {
                                 {/* <option value="email">email</option>
                                 <option value="phone">phone no</option>
                                 <option selected value="user_id">user id</option> */}
-                                <option value="order_id">order id</option>
+                                <option value="customer_id">customer id</option>
                             </select>
                         </label>
                         <input type="text" name="text" value={id} className="form-text" onChange={(e)=> setId(e.target.value)}/>
                     </div>
                     <span>
-                        <button  disabled={!id} onClick={()=>{                       
+                        <button  type='submit' disabled={!id} onClick={()=>{                       
                             if(parseInt(Number(id))==id && !isNaN(parseInt(id,10)))
-                                navigate("/orders")
-                            else
-                            navigate("/error")
+                                 navigate("/order")
                         }}>
+                        
                             Search
                         </button>
                     </span>
