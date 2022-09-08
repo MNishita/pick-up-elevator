@@ -5,6 +5,7 @@ import Header from './components/header';
 import Footer from './components/bottombar';
 import Homepage from './pages/main/homepage';
 import Order from './pages/orders/orders';
+import OrderDetails from './pages/OrderDetails/order-details';
 import PageNotFound from './pages/404';
 import QRgererator from './pages/QRdetails/Qr';
 import AddOrder from './services/postOrders'
@@ -26,6 +27,7 @@ function App() {
             <Route path='/' element={<Homepage />} />
             <Route path='/homepage' element={<Homepage />} />
             <Route path='/order' element={<Order />} />
+            <Route path='/order/:orderId' element={<Order />} />
             <Route path='/qr' element={<QRgererator />} />
             <Route path='/post' element={<AddOrder />}/>
             <Route path='/*' element={<PageNotFound />} />

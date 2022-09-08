@@ -3,27 +3,37 @@ import "./orders.css";
 import Image from "../../assets/image.svg";
 import Tick from "../../assets/tick.svg";
 import Qr from "../../assets/qrcode.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getOrders } from '../../services/getOrders/index'
+import {useLocation} from "react-router-dom";
 
 function Order() {
     let navigate = useNavigate();
-    const { isLoading, data, isError, error } = useQuery(['users'], async()=>await getOrders(300));
+    const location = useLocation();
+    const {orderId} =useParams();
 
+    // const params = new URLSearchParams(window.location.pathname)
+    const { isLoading, data, isError, error } = useQuery(['orders'], async()=>await getOrders({orderId}.orderId));
+   
+    console.log(parseInt({orderId}.orderId))
     console.log("debug", isLoading)
     console.log("data",data)
-
+    console.log(!data)
     console.log(error, isError)
 
     if (isLoading) return <div>Loading...</div>
 
     if (isError) return <div>{error.message}</div>
 
+    if(!data) navigate("/error")
+
     return (
         <>
+            
             <div className="container">
                 <p className="head">Order Pickup</p>
+                
                 {
                     data?.data.map(order => {
                         return <div key={order.id}>
@@ -33,8 +43,8 @@ function Order() {
                                         <img src={Image} alt="" height={140} width={140}></img>
                                     </div>
                                     <div className="left">
-                                        <span>{order.item_description}</span><br></br>
-                                        <span>{order.quantity}</span><br></br>
+                                        <span>{order.order_items.item_description}</span><br></br>
+                                        <span>{order.order_items.item_quantity}</span><br></br>
                                         <span>Payment Type : Card</span>
                                     </div>
                                     <div className="right">
@@ -55,7 +65,7 @@ function Order() {
                                     </div>
                                     <div className="text">
                                         <span>Delivery</span>
-                                        <span>$0.00</span>
+                                        <span>{order.order_items.item_price}</span>
                                     </div>
                                     <div className="text">
                                         <span>Estimated tax</span>

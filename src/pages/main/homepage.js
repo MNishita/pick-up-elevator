@@ -1,13 +1,16 @@
 import React from "react";
 import "./homepage.css";
 import MyImage from "../../assets/Heart-Target.svg";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import {useState} from 'react'
+import { useQuery } from "@tanstack/react-query";
+import { getOrders } from '../../services/getOrders/index'
 
 function Homepage() {
     const [id,setId] = useState('');
+    const params={ id}
     let navigate = useNavigate();
-     
+   
     return(
         <div className="main-container">
             <div>
@@ -29,9 +32,12 @@ function Homepage() {
                     <span>
                         <button  type='submit' disabled={!id} onClick={()=>{                       
                             if(parseInt(Number(id))==id && !isNaN(parseInt(id,10)))
-                                 navigate("/order")
+                                 navigate(`/order/${id}` )
+                            else
+                                    navigate("/error")
+                            
                         }}>
-                        
+                       
                             Search
                         </button>
                     </span>
