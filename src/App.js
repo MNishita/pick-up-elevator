@@ -1,9 +1,10 @@
-import React from 'react'
+import React , {useState} from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/header';
 import Footer from './components/bottombar';
 import Homepage from './pages/main/homepage';
+import Home from './pages/main/validation';
 import Order from './pages/orders/orders';
 import OrderDetails from './pages/OrderDetails/order-details';
 import PageNotFound from './pages/404';
@@ -17,6 +18,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 const queryClient = new QueryClient()
 
 function App() {
+
   return (
     <QueryClientProvider client={queryClient}>
 
@@ -24,8 +26,8 @@ function App() {
         <Header />
         <Router>
           <Routes>
-            <Route path='/' element={<Homepage />} />
-            <Route path='/homepage' element={<Homepage />} />
+            <Route path='/' element={<Home  />} />
+            <Route path='/homepage' element={<Home />} />
             <Route path='/order' element={<Order />} />
             <Route path='/order/:orderId' element={<Order />} />
             <Route path='/qr' element={<QRgererator />} />
