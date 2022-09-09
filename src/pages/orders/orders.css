@@ -64,7 +64,7 @@
     font-weight: 700;
 }
 
- button{
+ .button2{
     font-size: 22px;
     padding: 5px 50px; 
      margin: 20px;
@@ -75,7 +75,7 @@
     cursor: pointer;
 } 
 
-button:disabled{
+.button2:disabled{
     font-size: 22px;
     padding: 5px 50px; 
     margin: 20px;
@@ -169,7 +169,7 @@ button:disabled{
         font-weight: 700;
     }
 
-    button {
+    .button2 {
         padding: 10px;
         margin: 10px auto;
         background: #cc0000;
