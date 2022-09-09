@@ -79,7 +79,7 @@ function Order() {
                             </section>
 
                             <div>
-                                    <button class="tooltip" disabled={order.payment_status==='UNPAID'} onClick={() =>{
+                                    <button class="button2" disabled={order.payment_status==='UNPAID'} onClick={() =>{
                                         navigate('/qr')
                                     }}>
                                         Generate Pickup code
