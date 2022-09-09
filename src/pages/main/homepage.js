@@ -5,41 +5,44 @@ import { useNavigate} from 'react-router-dom';
 import {useState} from 'react'
 import { useQuery } from "@tanstack/react-query";
 import { getOrders } from '../../services/getOrders/index'
+function Homepage({ Valid , error}) {
+    const [id,setId] = useState({customerId:""});
 
-function Homepage() {
-    const [id,setId] = useState('');
+
+    const submitHandler = e =>{
+       e.preventDefault(); 
+       Valid(id)
+       if(error != ""){
+        navigate(`order/${id}`)  
+       }
+    }
+
+
     const params={ id}
     let navigate = useNavigate();
    
     return(
         <div className="main-container">
             <div>
-                <img className="logo" src={MyImage} alt="Heart" height={450} width={450}></img>
+                <img className="logo" src={MyImage} alt="Heart" height={450} width={550}></img>
             </div>
             <div>
-                <form>
+                <form onSubmit={submitHandler}>
                     <div className="form-group">
                         <label>
                             <select className="choose">
-                                {/* <option value="email">email</option>
+                                <option value="customerId">Customer ID</option>
+                                 <option value="email">email</option>
                                 <option value="phone">phone no</option>
-                                <option selected value="user_id">user id</option> */}
-                                <option value="customer_id">customer id</option>
+                                <option value="userId">user id</option> 
+                                
                             </select>
                         </label>
-                        <input type="text" name="text" value={id} className="form-text" onChange={(e)=> setId(e.target.value)}/>
+                        <input type="text" name="customerId" value={id.customerId} className="form-text" onChange={(e)=> setId(e.target.value)}/>
                     </div>
+                    {(error != "") ? <div className="error">{error}</div> : ""}
                     <span>
-                        <button  type='submit' disabled={!id} onClick={()=>{                       
-                            if(parseInt(Number(id))==id && !isNaN(parseInt(id,10)))
-                                 navigate(`/order/${id}` )
-                            else
-                                    navigate("/error")
-                            
-                        }}>
-                       
-                            Search
-                        </button>
+                        <button className="button1" > search </button>
                     </span>
                 </form>
             </div>
