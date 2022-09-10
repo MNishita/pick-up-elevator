@@ -43,8 +43,8 @@ function Order() {
                                         <img src={Image} alt="" height={140} width={140}></img>
                                     </div>
                                     <div className="left">
-                                        <span>{order.order_items.item_description}</span><br></br>
-                                        <span>{order.order_items.item_quantity}</span><br></br>
+                                        <span>{order.order_items[0].item_description}</span><br></br>
+                                        <span>{order.order_items[0].item_quantity}</span><br></br>
                                         <span>Payment Type : Card</span>
                                     </div>
                                     <div className="right">
