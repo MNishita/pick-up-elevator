@@ -79,10 +79,10 @@
     font-size: 22px;
     padding: 5px 50px; 
     margin: 20px;
-    background: #797979;
+    background: #cc0000;
     border: #f6f6f6;
-    color: white;
-     border-radius: 5px;
+    color: #f6f6f6;
+    border-radius: 5px;
     cursor: pointer;
     
 }
