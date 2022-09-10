@@ -5,15 +5,25 @@ import { useNavigate} from 'react-router-dom';
 import {useState} from 'react'
 import { useQuery } from "@tanstack/react-query";
 import { getOrders } from '../../services/getOrders/index'
-function Homepage({ Valid , error}) {
+import { valid } from "../../helpers/homePage";
+function Homepage() {
     const [id,setId] = useState({customerId:""});
+    const [error,setError] = useState("");
 
-
+    const { isLoading, data } = useQuery(['orders'], async()=>await getOrders(id));
     const submitHandler = e =>{
        e.preventDefault(); 
-       Valid(id)
-       if(error != ""){
-        navigate(`order/${id}`)  
+       console.log(data)
+       const isValid = valid(data)
+
+       if(isValid){
+        console.log(isValid)
+        //navigate(`order/${id}`)  
+       }
+       else{
+        console.log(isValid)
+        //setError("Invalid Customer ID");
+
        }
     }
 
@@ -42,7 +52,7 @@ function Homepage({ Valid , error}) {
                     </div>
                     {(error != "") ? <div className="error">{error}</div> : ""}
                     <span>
-                        <button className="button1" > search </button>
+                        <button className="button1" ><span className="button-text">search</span>  </button>
                     </span>
                 </form>
             </div>
