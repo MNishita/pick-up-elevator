@@ -1,35 +1,42 @@
 import React from "react";
 import "./homepage.css";
 import MyImage from "../../assets/Heart-Target.svg";
-//import { useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import {useState} from 'react'
 import { useQuery } from "@tanstack/react-query";
 import { getOrders } from '../../services/getOrders/index'
 import { valid } from "../../helpers/homePage";
 
 function Homepage() {
+
+    let navigate = useNavigate();
     const [id,setId] = useState({customerId:''});
     const [error,setError] = useState("");
 
-    const {data,refetch}=useQuery(['orders'], async()=>await getOrders(id.customerId),{enabled:false});
+    const {data,refetch}=useQuery(['orders'], 
+    async()=>await getOrders(id.customerId),
+    {
+        enabled:false
+    });
 
     const handleClick = e =>{
        e.preventDefault(); 
        refetch();
-       const isValid = valid(data)
+       let isValid=''
+       if(data){isValid = valid(data?.data.length)}
        if(isValid){
         console.log(isValid)
-        //navigate(`order/${id}`)  
+        navigate(`order/${id.customerId}`)  
        }
        else{
 
         console.log(isValid)
-        //setError("Invalid Customer ID");
+        setError("Invalid Customer ID");
 
        }
     }
 
-    //let navigate = useNavigate();
+
     return(
         <div className="main-container">
             <div>
@@ -47,7 +54,7 @@ function Homepage() {
                         </label>
                         <input type="text" name="customerId" value={id.customerId} className="form-text" onChange={(e)=> setId({customerId:e.target.value})}/>
                     </div>
-                    {(error != "") ? <div className="error">{error}</div> : ""}
+                    {(error !== "") ? <div className="error">{error}</div> : ""}
                     <button type="submit" className="button1" onClick={handleClick}>
                         Search
                     </button>

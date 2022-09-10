@@ -8,8 +8,7 @@ import Footer from './components/bottombar';
 import Homepage from './pages/main/homepage';
 import Order from './pages/orders/orders';
 import PageNotFound from './components/error/404Error';
-//import QRgererator from './pages/QRdetails/Qr';
-import AddOrder from './services/postOrders'
+import QRgererator from './pages/QRdetails/Qr';
 
 import { QueryClientProvider, QueryClient} from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -29,8 +28,7 @@ function App() {
             <Route path='/homepage' element={<Homepage />} />
             <Route path='/order' element={<Order />} />
             <Route path='/order/:orderId' element={<Order />} />
-            {/* <Route path='/qr' element={<QRgererator />} /> */}
-            <Route path='/post' element={<AddOrder />}/>
+            <Route path='/qr' element={<QRgererator />} />
             <Route path='/*' element={<PageNotFound />} />
           </Routes>
         </Router>

@@ -1,5 +1,5 @@
-export const valid = (orders) => {
-    if(orders.length>0){
+export const valid = (size) => {
+    if(size>0){
         return true;
     }
     return false;
