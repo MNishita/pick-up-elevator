@@ -5,28 +5,38 @@
 
 .form-group {
     padding: 10px;
-    margin-top: -120px;
+    margin-top: -110px;
 }
 
 .choose {
-    height: 35px;
-    width: 80px;
+    height: 40px;
+    width: 120px;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 .form-text {
-    width: 360px;
-    height: 29px;
+    width: 300px;
+    height: 35px;
+    font-size: 18px;
 }
 
-.button {
+.button1 {
     padding: 10px 100px;
-    margin: 20px;
-    background: #cc0000;
+    margin: 30px;
+    background: #CC0000;
     border: #f6f6f6;
-    color: #f6f6f6;
-    font-size: medium;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    border-radius: 5%;
 }
 
+.error{
+    color: #f80707;
+    font-weight: 500;
+    font-size: 20px;
+}
 @media screen and (max-width:570px) {
     .main-container {
         margin: 0px 10px;
@@ -37,7 +47,6 @@
         padding: 10px;
         margin-top: -100px;
     }
-    
 
     .logo {
         height: 360px;
@@ -45,12 +54,27 @@
     }
     
     .form-text {
-        width: 230px;
+        width: 200px;
         height: 30px;
+        font-size: 15px;
     }
-    
-    .button {
+
+    .choose{
+        height: 30px;
+        width: 110px;
+        font-size: 15px;
+        font-weight: 300;
+
+    }
+
+    .button1 {
         padding: 15px 130px;
         margin: 20px auto;
+        font-size: 20px;
+    }
+
+    .error{
+        font-size: 17px;
+        font-weight: 400;
     }
 }

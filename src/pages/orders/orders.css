@@ -55,24 +55,45 @@
     justify-content: space-between;
     margin: 5px;
 }
-
+/* .tooltiptext{
+    visibility:hidden;
+} */
 #bottom {
     margin-top: 60px;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
-button {
+ .button2{
     font-size: 22px;
-    padding: 10px 100px;
+    padding: 5px 50px; 
+     margin: 20px;
+    background:#CC0000;
+    border: #CC0000;
+    color: white;
+     border-radius: 5px; 
+    cursor: pointer;
+} 
+
+.button2:disabled{
+    font-size: 22px;
+    padding: 5px 50px; 
     margin: 20px;
     background: #cc0000;
     border: #f6f6f6;
     color: #f6f6f6;
     border-radius: 5px;
     cursor: pointer;
+    
 }
-
+.tooltip:hover{
+    background-color: aqua;
+}
+/* .tooltip:hover .tooltiptext{
+    visibility:visible;
+    background-color: aqua;
+    color: brown;
+} */
 .qr {
     display: none;
 }
@@ -148,7 +169,7 @@ button {
         font-weight: 700;
     }
 
-    button {
+    .button2 {
         padding: 10px;
         margin: 10px auto;
         background: #cc0000;
