@@ -5,34 +5,33 @@
 
 .form-group {
     padding: 10px;
-    margin-top: -120px;
+    margin-top: -110px;
 }
 
 .choose {
     height: 40px;
-    width: 140px;
-    font-size: 20px;
+    width: 120px;
+    font-size: 18px;
     font-weight: 300;
 }
 
 .form-text {
-    width: 360px;
+    width: 300px;
     height: 35px;
     font-size: 18px;
 }
 
 .button1 {
     padding: 10px 100px;
-    margin: 20px;
+    margin: 30px;
     background: #CC0000;
     border: #f6f6f6;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 300;
     border-radius: 5%;
     
 }
-
 
 .error{
     color: #f80707;
@@ -49,7 +48,6 @@
         padding: 10px;
         margin-top: -100px;
     }
-    
 
     .logo {
         height: 360px;
@@ -61,6 +59,7 @@
         height: 30px;
         font-size: 15px;
     }
+
     .choose{
         height: 30px;
         width: 110px;
@@ -68,11 +67,13 @@
         font-weight: 300;
 
     }
+
     .button1 {
         padding: 15px 130px;
         margin: 20px auto;
         font-size: 20px;
     }
+
     .error{
         font-size: 17px;
         font-weight: 400;

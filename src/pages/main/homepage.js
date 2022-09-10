@@ -1,59 +1,56 @@
 import React from "react";
 import "./homepage.css";
 import MyImage from "../../assets/Heart-Target.svg";
-import { useNavigate} from 'react-router-dom';
+//import { useNavigate} from 'react-router-dom';
 import {useState} from 'react'
 import { useQuery } from "@tanstack/react-query";
 import { getOrders } from '../../services/getOrders/index'
 import { valid } from "../../helpers/homePage";
+
 function Homepage() {
-    const [id,setId] = useState({customerId:""});
+    const [id,setId] = useState({customerId:''});
     const [error,setError] = useState("");
 
-    const { isLoading, data } = useQuery(['orders'], async()=>await getOrders(id));
-    const submitHandler = e =>{
-       e.preventDefault(); 
-       console.log(data)
-       const isValid = valid(data)
+    const {data,refetch}=useQuery(['orders'], async()=>await getOrders(id.customerId),{enabled:false});
 
+    const handleClick = e =>{
+       e.preventDefault(); 
+       refetch();
+       const isValid = valid(data)
        if(isValid){
         console.log(isValid)
         //navigate(`order/${id}`)  
        }
        else{
+
         console.log(isValid)
         //setError("Invalid Customer ID");
 
        }
     }
 
-
-    const params={ id}
-    let navigate = useNavigate();
-   
+    //let navigate = useNavigate();
     return(
         <div className="main-container">
             <div>
-                <img className="logo" src={MyImage} alt="Heart" height={450} width={550}></img>
+                <img className="logo" src={MyImage} alt="Heart" height={400} width={450}></img>
             </div>
             <div>
-                <form onSubmit={submitHandler}>
+                <form>
                     <div className="form-group">
                         <label>
                             <select className="choose">
-                                <option value="customerId">Customer ID</option>
-                                 <option value="email">email</option>
+                                <option value="customerId">customer id</option>
+                                <option value="email">email</option>
                                 <option value="phone">phone no</option>
-                                <option value="userId">user id</option> 
-                                
                             </select>
                         </label>
-                        <input type="text" name="customerId" value={id.customerId} className="form-text" onChange={(e)=> setId(e.target.value)}/>
+                        <input type="text" name="customerId" value={id.customerId} className="form-text" onChange={(e)=> setId({customerId:e.target.value})}/>
                     </div>
                     {(error != "") ? <div className="error">{error}</div> : ""}
-                    <span>
-                        <button className="button1" ><span className="button-text">search</span>  </button>
-                    </span>
+                    <button type="submit" className="button1" onClick={handleClick}>
+                        Search
+                    </button>
                 </form>
             </div>
         </div>

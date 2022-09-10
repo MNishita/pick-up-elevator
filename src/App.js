@@ -1,17 +1,17 @@
-import React , {useState} from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+
+//Components
 import Header from './components/header';
 import Footer from './components/bottombar';
 import Homepage from './pages/main/homepage';
 import Order from './pages/orders/orders';
-import OrderDetails from './pages/OrderDetails/order-details';
-import PageNotFound from './pages/404';
-import QRgererator from './pages/QRdetails/Qr';
+import PageNotFound from './components/error/404Error';
+//import QRgererator from './pages/QRdetails/Qr';
 import AddOrder from './services/postOrders'
 
-import { QueryClientProvider, QueryClient ,useMutation,useQueryClient,
-  useQuery} from '@tanstack/react-query'
+import { QueryClientProvider, QueryClient} from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const queryClient = new QueryClient()
@@ -29,14 +29,14 @@ function App() {
             <Route path='/homepage' element={<Homepage />} />
             <Route path='/order' element={<Order />} />
             <Route path='/order/:orderId' element={<Order />} />
-            <Route path='/qr' element={<QRgererator />} />
+            {/* <Route path='/qr' element={<QRgererator />} /> */}
             <Route path='/post' element={<AddOrder />}/>
             <Route path='/*' element={<PageNotFound />} />
           </Routes>
         </Router>
         <Footer />
       </div>
-      <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
+      <ReactQueryDevtools initialIsOpen={false} position='bottom-left' />
     </QueryClientProvider>
   );
 }

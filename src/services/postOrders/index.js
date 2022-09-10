@@ -16,15 +16,15 @@ export default function AddOrder() {
     const UpdateOrder = (e) => {
         e.preventDefault();
 
-        const order = { customer_id, order_id, store_id, phone }
+        // const order = { customer_id, order_id, store_id, phone }
 
-            // axios.post(baseURL,order).then((response) => {
-            //     console.log("updated")
-            // }).catch(error => {
-            //     console.log(error)
-            // })
+        //     // axios.post(baseURL,order).then((response) => {
+        //     //     console.log("updated")
+        //     // }).catch(error => {
+        //     //     console.log(error)
+        //     // })
 
-            console.log("updated")
+        //     console.log("updated")
 
        
     }
@@ -39,7 +39,7 @@ export default function AddOrder() {
         }).catch(error => {
             console.log(error)
         })
-    }, [])
+    }, [id])
 
 
     return (
