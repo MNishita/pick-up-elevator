@@ -2,21 +2,16 @@ import React from "react";
 import "./orders.css";
 import Image from "../../assets/image.svg";
 import Tick from "../../assets/tick.svg";
-import Qr from "../../assets/qrcode.svg";
 import { useNavigate,useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { getOrders } from '../../services/getOrders/index'
-//import {useLocation} from "react-router-dom";
+import { getOrders } from '../../services/getOrders/index';
 
 function Order() {
 
     let navigate = useNavigate();
-    //const location = useLocation();
     const {orderId} =useParams();
 
-
-    const { isLoading, data, isError, error } = useQuery(['orders'], async()=>await getOrders({orderId}));
-   
+    const {isLoading, data, isError, error } = useQuery(['orders'], async()=>await getOrders({orderId}.orderId));
 
     if (isLoading) return <div>Loading...</div>
 
@@ -29,7 +24,7 @@ function Order() {
         <div className="container">
             <p className="head">Order Pickup</p>
             {
-                data?.data.map(order => {
+                data.map(order => {
                     return <div key={order.id}>
                         <section className="details">
                             <div className="section-1">
@@ -44,7 +39,7 @@ function Order() {
                                     <span>Payment Type : Card</span>
                                 </div>
                                 <div className="right">
-                                    <span>Status :
+                                    <span className="status">Status :
                                         <span style={{ color: "#F69C49" }}> {order.order_status}</span>
                                     </span>
                                     <span className="payment">{order.payment_status}
@@ -68,19 +63,12 @@ function Order() {
                             </div>
                         </section>
                         <div>
-                            <button className="button2" disabled={order.payment_status==='UNPAID'} onClick={() => {navigate('/qr')}}>
+                            <button className="button2" disabled={order.payment_status==='UNPAID'} onClick={() => {navigate(`/qr/${order.order_id}/${orderId}`)}}>
                                 Generate Pickup code
-                            </button>
-                            <img className="qr" src={Qr} height={30} width={30} alt=""></img>   
+                            </button>  
                         </div>
                     </div>})
                 }
-           {/* <div>
-                    <button>
-                        <span className="button-text" disabled='true'>Generate Pickup code</span>
-                        <img className="qr" src={Qr} height={30} width={30}></img>
-                    </button>
-                </div> */}
             </div>
         </>
     )

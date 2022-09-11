@@ -2,7 +2,7 @@ import React from "react";
 import "./homepage.css";
 import MyImage from "../../assets/Heart-Target.svg";
 import { useNavigate} from 'react-router-dom';
-import {useState} from 'react'
+import {useState} from 'react';
 import { useQuery } from "@tanstack/react-query";
 import { getOrders } from '../../services/getOrders/index'
 import { valid } from "../../helpers/homePage";
@@ -13,37 +13,34 @@ function Homepage() {
     const [id,setId] = useState({customerId:''});
     const [error,setError] = useState("");
 
-    const {data,refetch}=useQuery(['orders'], 
-    async()=>await getOrders(id.customerId),
+    const {data,refetch}=useQuery(['orders'], async()=>await getOrders(id.customerId),
     {
-        enabled:false
+        enabled:false,
     });
-
-    const handleClick = e =>{
+    
+    const submitHandler = e =>{
        e.preventDefault(); 
        refetch();
-       let isValid=''
-       if(data){isValid = valid(data?.data.length)}
+       const isValid = valid(data.length)
        if(isValid){
         console.log(isValid)
-        navigate(`order/${id.customerId}`)  
+        navigate(`/order/${id.customerId}`)  
        }
        else{
 
         console.log(isValid)
         setError("Invalid Customer ID");
-
-       }
+    }
     }
 
 
     return(
         <div className="main-container">
             <div>
-                <img className="logo" src={MyImage} alt="Heart" height={400} width={450}></img>
+                <img className="logo" src={MyImage} alt="Heart" height={450} width={500}></img>
             </div>
             <div>
-                <form>
+                <form onSubmit={submitHandler}>
                     <div className="form-group">
                         <label>
                             <select className="choose">
@@ -55,7 +52,7 @@ function Homepage() {
                         <input type="text" name="customerId" value={id.customerId} className="form-text" onChange={(e)=> setId({customerId:e.target.value})}/>
                     </div>
                     {(error !== "") ? <div className="error">{error}</div> : ""}
-                    <button type="submit" className="button1" onClick={handleClick}>
+                    <button type="submit" className="button1">
                         Search
                     </button>
                 </form>

@@ -1,24 +1,24 @@
 .main-container {
     margin: 0px 50px;
-    margin-top: -70px;
+    margin-top: -120px;
 }
 
 .form-group {
     padding: 10px;
-    margin-top: -110px;
+    margin-top: -120px;
 }
 
 .choose {
     height: 40px;
-    width: 120px;
-    font-size: 18px;
+    width: 130px;
+    font-size: 19px;
     font-weight: 300;
 }
 
 .form-text {
     width: 300px;
     height: 35px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .button1 {
@@ -27,9 +27,8 @@
     background: #CC0000;
     border: #f6f6f6;
     color: white;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 300;
-    border-radius: 5%;
 }
 
 .error{
@@ -55,7 +54,7 @@
     
     .form-text {
         width: 200px;
-        height: 30px;
+        height: 25px;
         font-size: 15px;
     }
 
@@ -68,9 +67,9 @@
     }
 
     .button1 {
-        padding: 15px 130px;
+        padding: 8px 70px;
         margin: 20px auto;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .error{

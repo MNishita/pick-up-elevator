@@ -1,73 +1,45 @@
-import { useEffect, useState } from 'react';
+import React from "react";
 import './Qr.css';
+import { QRCodeCanvas } from "qrcode.react";
+import { useNavigate,useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { getQr } from '../../services/getQr';
+
   function QRgererator() {
-  const [order_id, setOrderId] = useState("");
-  const [customer_id, setCustomerId]=useState("");
-  const [temp_order,setTempOrder]=useState("");
-  const [temp_customer,setTempCustomer]=useState("");
-  const [size, setSize] = useState(400);
-  const [bgColor, setBgColor] = useState("ffffff");
-  const [qrCode, setQrCode] = useState("");
-  
-  useEffect(() => {
-    setQrCode
- (`http://api.qrserver.com/v1/create-qr-code/?data=${order_id}&size=${size}x${size}&bgcolor=${bgColor}`);
-  }, [order_id, size, bgColor]);
+    
+    let navigate = useNavigate();
 
-    // ('http://localhost:8080/aggregator_api/v1/generate_qr/?order_id=${order_id}/?customer_id=${customer_id}');
-    // },[order_id,customer_id]);
-  
-  function handleClick() {
-    setOrderId(temp_order);
-     setCustomerId(temp_customer);
-  }
-  
-  return (
-    <div className="App">
-      <h1>QR Code Generator</h1>
-      <div className="input-box">
-        <div className="gen">
-            <span>
-                <input type="text" onChange={
-                (e) => {setTempOrder(e.target.value)}}
-                placeholder="Enter order id" />
-            </span>
-            {/* <span> 
-                <input type="text" onChange={
-                (e) => {setTempCustomer(e.target.value)}}
-                placeholder="Enter Customer id" />
-            </span> */}
-            <span>
-                <button className="button" 
-                    onClick={handleClick}>
-                    Generate
-                </button>
-            </span>
-        </div>
-        <div className='extra'>
-            <span>
-               <h5>Background Color:</h5>
-                <input type="color" onChange={(e) => 
-                 { setBgColor(e.target.value.substring(1)) }} />
+    let url= '';
+    const {orderId,customerId} =useParams();
 
-            </span>
-            <span>
-                <h5>Dimension:</h5>
-                <input type="range" min="200" max="600"
-                value={size} onChange={(e) => 
-                {setSize(e.target.value)}} />
-            </span>
-            
-        </div>
+    const {isLoading, data, isError, error } = useQuery(['orders'], async()=>await getQr({orderId}.orderId,{customerId}.customerId)); 
+
+    if(data) {
+      url = data.data.image_code;
+    }
+    
+    const qrcode = (
+      <QRCodeCanvas
+        value={url}
+        size={200}
+        bgColor={"white"}
+      />
+    );
+
+    if (isLoading) return <div>Loading...</div>
+
+    if (isError) return <div>{error.message}</div>
+
+    if(!data) navigate("/error")
+
+    return (
+      <>
+      <div className="container">
+        <h2>Scan the QR Code at pickup store</h2>
+        <p>{qrcode}</p>
       </div>
-      <div className="output-box">
-        <img src={qrCode} alt="" />
-        {/* <a href={qrCode} download="QRCode">
-          <button className='button'>Download</button>
-        </a> */}
-      </div>
-    </div>
-  );
+      </>
+    );
 }
   
 export default QRgererator;
