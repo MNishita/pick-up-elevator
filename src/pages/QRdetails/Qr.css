@@ -1,0 +1,22 @@
+.heading {
+    display: block;
+}
+
+.Merror {
+    display: none;
+}
+
+@media screen and (min-width:500px) {
+    .QRcode {
+        display: none;
+    }
+
+    .Merror {
+        display: block;
+        margin-top: 100px;
+    }
+
+    .heading {
+        display: none;
+    }
+}

@@ -4,6 +4,7 @@ import { QRCodeCanvas } from "qrcode.react";
 import { useNavigate,useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getQr } from '../../services/getQr';
+import ConfirmDelivery from '../../services/postGuestArrival/guestArrival';
 
   function QRgererator() {
     
@@ -12,8 +13,8 @@ import { getQr } from '../../services/getQr';
     let url= '';
     const {orderId,customerId} =useParams();
 
-    const {isLoading, data, isError, error } = useQuery(['orders'], async()=>await getQr({orderId}.orderId,{customerId}.customerId)); 
-
+    const {isLoading, data, isError, error } = useQuery(['items'], async()=>await getQr({orderId}.orderId,{customerId}.customerId));
+    
     if(data) {
       url = data.data.image_code;
     }
@@ -35,9 +36,11 @@ import { getQr } from '../../services/getQr';
     return (
       <>
       <div className="container">
-        <h2>Scan the QR Code at pickup store</h2>
-        <p>{qrcode}</p>
+        <h2 className="heading">Scan the QR Code at pickup store</h2>
+        <h4 className="Merror">Please open in mobile to generate QR</h4>
+        <p className="QRcode">{qrcode}</p>
       </div>
+      <ConfirmDelivery/>
       </>
     );
 }
