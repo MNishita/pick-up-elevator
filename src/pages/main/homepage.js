@@ -45,14 +45,14 @@ function Homepage() {
                         <label>
                             <select className="choose">
                                 <option value="customerId">customer id</option>
-                                <option value="email">email</option>
-                                <option value="phone">phone no</option>
+                                {/* <option value="email">email</option>
+                                <option value="phone">phone no</option> */}
                             </select>
                         </label>
                         <input type="text" name="customerId" value={id.customerId} className="form-text" onChange={(e)=> setId({customerId:e.target.value})}/>
                     </div>
                     {(error !== "") ? <div className="error">{error}</div> : ""}
-                    <button type="submit" className="button1">
+                    <button type="submit" className="button1" disabled={!id.customerId}>
                         Search
                     </button>
                 </form>

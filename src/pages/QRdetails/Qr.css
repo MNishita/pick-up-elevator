@@ -3,6 +3,36 @@
     color: white;
     border: white;
     padding: 10px 10px;
-    font-size: 18px;
+    font-size: medium;
     border-radius: 5px;
+}
+
+@media screen and (max-width:767px) {
+    .button3{
+        background-color: #cc0000;
+        color: white;
+        border: white;
+        padding: 10px 10px;
+        font-size: small;
+        border-radius: 5px;
+    }
+
+    .container{
+        font-size: small;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .button3{
+        background-color: #cc0000;
+        color: white;
+        border: white;
+        padding: 10px 10px;
+        font-size: x-small;
+        border-radius: 5px;
+    }
+
+    .container{
+        font-size: x-small;
+    }
 }

@@ -13,6 +13,7 @@ function Order() {
 
     const {isLoading, data, isError, error } = useQuery(['orders'], async()=>await getOrders({customerId}.customerId));
 
+    console.log({customerId}.customerId)
     if (isLoading) return <div>Loading...</div>
 
     if (isError) return <div>{error.message}</div>
