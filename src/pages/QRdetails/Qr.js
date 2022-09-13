@@ -43,7 +43,8 @@ import { updateDelivery } from "../../services/postDelivery";
       <div className="container">
         <h2>Scan the QR Code at pickup store</h2>
         <p>{qrcode}</p>
-        <button onClick={() =>{
+        <h3>Click to confirm delivery</h3>
+        <button className="button3" onClick={() =>{
           mutate({
             id : data.data.id,
             customer_id : data.data.customer_id,
