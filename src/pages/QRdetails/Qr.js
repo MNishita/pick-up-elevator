@@ -4,20 +4,26 @@ import { QRCodeCanvas } from "qrcode.react";
 import { useNavigate,useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getQr } from '../../services/getQr';
+import { useMutation } from "@tanstack/react-query";
+import { updateDelivery } from "../../services/postDelivery";
 
   function QRgererator() {
+
+    const { mutate} = useMutation(updateDelivery);
+
+    var showdate = new Date();
+    var displaydate =showdate.getFullYear() +'-'+showdate.getMonth()+'-'+showdate.getDate()+'T'+showdate.getHours()+':'+showdate.getMinutes()+':'+showdate.getSeconds()+'+05:30';
     
     let navigate = useNavigate();
-
     let url= '';
     const {orderId,customerId} =useParams();
 
-    const {isLoading, data, isError, error } = useQuery(['orders'], async()=>await getQr({orderId}.orderId,{customerId}.customerId)); 
+    const {isLoading, data, isError, error,isFetched } = useQuery(['delivery'], async()=>await getQr({orderId}.orderId,{customerId}.customerId)); 
 
-    if(data) {
+    if(isFetched) {
       url = data.data.image_code;
     }
-    
+    console.log(data)
     const qrcode = (
       <QRCodeCanvas
         value={url}
@@ -37,6 +43,23 @@ import { getQr } from '../../services/getQr';
       <div className="container">
         <h2>Scan the QR Code at pickup store</h2>
         <p>{qrcode}</p>
+        <button onClick={() =>{
+          mutate({
+            id : data.data.id,
+            customer_id : data.data.customer_id,
+            store_id : data.data.store_id,
+            order_id : data.data.order_id,
+            image_id : data.data.image_id,
+            image_code : data.data.image_code,
+            payment_status : data.data.payment_status,
+            delivery_status : "DELIVERED",
+            pickup_date : displaydate
+            
+          })
+        }}
+        >
+          Confirm Delivery
+        </button>
       </div>
       </>
     );
