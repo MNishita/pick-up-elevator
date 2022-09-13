@@ -9,11 +9,11 @@ import { getOrders } from '../../services/getOrders/index';
 function Order() {
 
     let navigate = useNavigate();
-    const {orderId} =useParams();
+    const {customerId} =useParams();
 
-    const {isLoading, data, isError, error } = useQuery(['orders'], async()=>await getOrders({orderId}.orderId));
-    console.log(data)
+    const {isLoading, data, isError, error } = useQuery(['orders'], async()=>await getOrders({customerId}.customerId));
 
+    console.log({customerId}.customerId)
     if (isLoading) return <div>Loading...</div>
 
     if (isError) return <div>{error.message}</div>
@@ -68,7 +68,7 @@ function Order() {
                         </div>
                     })}
                     <div>
-                        <button className="button2" disabled={order.payment_status==='UNPAID'} onClick={() => {navigate(`/qr/${order.order_id}/${orderId}`)}}>
+                        <button className="button2" disabled={order.payment_status==='UNPAID'} onClick={() => {navigate(`/qr/${order.order_id}/${order.customer_id}`)}}>
                                     Generate Pickup code
                         </button>  
                     </div>

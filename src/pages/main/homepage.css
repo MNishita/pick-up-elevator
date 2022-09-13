@@ -31,25 +31,104 @@
     font-weight: 300;
 }
 
+button:disabled{
+    font-size: 22px;
+    padding: 10px 100px; 
+    margin: 20px;
+    background: #797979;
+    border: #f6f6f6;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
 .error{
     color: #f80707;
     font-weight: 500;
     font-size: 20px;
 }
-@media screen and (max-width:570px) {
+@media screen and (max-width:767px) {
     .main-container {
         margin: 0px 10px;
         margin-top: -50px;
+        font-size: small;
+        cursor: pointer;
     }
     
     .form-group {
         padding: 10px;
         margin-top: -100px;
+        font-size: small;
     }
 
     .logo {
         height: 360px;
         width: 360px;
+        font-size: small;
+    }
+    
+    .form-text {
+        width: 200px;
+        height: 25px;
+        font-size: small;
+    }
+
+    .choose{
+        height: 30px;
+        width: 110px;
+        font-size: small;
+        font-weight: 300;
+
+    }
+
+    .button1 {
+        padding: 5px 50px;
+        margin: 20px auto;
+        font-size: small;
+        background: #CC0000;
+        border: #f6f6f6;
+        color: white;
+        font-weight: 300;
+        cursor: pointer;
+    }
+
+    button:disabled{
+        font-size: small;
+        padding: 5px 50px; 
+        margin: 20px auto;
+        background: #797979;
+        border: #f6f6f6;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        
+    }
+
+    .error{
+        font-size: small;
+        font-weight: 400;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .main-container {
+        margin: 0px 10px;
+        margin-top: -50px;
+        font-size: x-small;
+        cursor: pointer;
+    }
+    
+    .form-group {
+        padding: 10px;
+        margin-top: -100px;
+        font-size: x-small;
+    }
+
+    .logo {
+        height: 360px;
+        width: 360px;
+        font-size: x-small;
     }
     
     .form-text {
@@ -67,13 +146,31 @@
     }
 
     .button1 {
-        padding: 8px 70px;
-        margin: 20px auto;
-        font-size: 18px;
+        padding: 5px 25px;
+        margin: 10px auto;
+        font-size: x-small;
+        background: #CC0000;
+        border: #f6f6f6;
+        color: white;
+        font-weight: 300;
+        cursor: pointer;
+    }
+
+    button:disabled{
+        font-size: x-small;
+        padding: 5px 25px; 
+        margin: 10px auto;
+        background: #797979;
+        border: #f6f6f6;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        
     }
 
     .error{
-        font-size: 17px;
+        font-size: x-small;
         font-weight: 400;
     }
 }
+

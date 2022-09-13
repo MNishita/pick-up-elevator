@@ -11,3 +11,25 @@
     font-weight: 700;
     padding-right: 45px;
 }
+
+@media screen and (max-width:767px) {
+    .header {
+        background-color: #CC0000;
+        color: white;
+        padding: 7px;
+        font-size: medium;
+        font-weight: 700;
+        padding-right: 45px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .header {
+        background-color: #CC0000;
+        color: white;
+        padding: 7px;
+        font-size: small;
+        font-weight: 700;
+        padding-right: 45px;
+    }
+}
