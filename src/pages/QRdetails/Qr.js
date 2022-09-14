@@ -44,7 +44,7 @@ import { updateDelivery } from "../../services/postDelivery";
       <h2 className="heading">Scan the QR Code at pickup store</h2>
         <h4 className="Merror">Please open in mobile to generate QR</h4>
         <p className="QRcode">{qrcode}</p>
-        <h3>Click to confirm delivery</h3>
+        <h3 className="conform">Click to confirm delivery</h3>
         <button className="button3" onClick={() =>{
           mutate({
             id : data.data.id,
@@ -63,7 +63,6 @@ import { updateDelivery } from "../../services/postDelivery";
           Confirm Delivery
         </button>
       </div>
-      <ConfirmDelivery/>
       </>
     );
 }

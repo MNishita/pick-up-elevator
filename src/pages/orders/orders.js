@@ -13,7 +13,6 @@ function Order() {
 
     const {isLoading, data, isError, error } = useQuery(['orders'], async()=>await getOrders({customerId}.customerId));
 
-    console.log({customerId}.customerId)
     if (isLoading) return <div>Loading...</div>
 
     if (isError) return <div>{error.message}</div>
@@ -62,15 +61,22 @@ function Order() {
                                         <span>Total</span>
                                         <span>{items.item_price}*{items.item_quantity}</span>
                                     </div>
+                                    
                                 </div>
+                                
                             </section>
                             <br></br>
+                            <div className="Merror">
+                                <h4>Please open in mobile to generate QR</h4>
+                            </div>
                         </div>
                     })}
                     <div>
-                        <button className="button2" disabled={order.payment_status==='UNPAID'} onClick={() => {navigate(`/qr/${order.order_id}/${order.customer_id}`)}}>
+                        
+                        <button className="button2" disabled={order.payment_status==='UNPAID'} onClick={() => {navigate(`/qr/order_id/${order.order_id}/customer_id/${order.customer_id}`)}}>
                                     Generate Pickup code
                         </button>  
+                        
                     </div>
                 </div>
             })}

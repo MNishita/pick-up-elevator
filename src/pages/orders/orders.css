@@ -2,6 +2,11 @@
     flex:0.8;
 }
 
+.Merror{
+    display:block;
+    font-size: medium;
+}
+
 .head {
     text-align: left;
     padding: 10px 50px;
@@ -93,26 +98,32 @@
 
 @media screen and (max-width:767px) {
 
+    .Merror{
+        display:inline-block;
+        font-size: small;
+        
+    }
+
     .button2{
         font-size: small;
-        padding: 6px 40px; 
-        margin: 10px;
+        padding: 0px 0px; 
+        margin: 0px;
         background:#CC0000;
         border: #CC0000;
         color: white;
-        border-radius: 5px; 
+        border-radius: 0px; 
         cursor: pointer;
         visibility:hidden;
     } 
     
     .button2:disabled{
         font-size: small;
-        padding: 6px 40px; 
-        margin: 10px;
+        padding: 0px 0px; 
+        margin: 0px;
         background: #cc0000;
         border: #f6f6f6;
         color: #f6f6f6;
-        border-radius: 5px;
+        border-radius: 0px;
         cursor: pointer;
         
     }
@@ -209,6 +220,11 @@
     .container{
         font-size: x-small;
     }
+
+    .Merror{
+        display:none;
+    }
+
     .head {
         margin: 5px;
         text-align: center;

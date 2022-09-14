@@ -1,8 +1,18 @@
 .heading {
-    display: block;
+    display: none;
 }
 
 .Merror {
+    display: block;
+    margin-top: 100px;
+    font-size: medium;
+}
+
+.conform{
+    display:none;
+}
+
+.QRcode {
     display: none;
 }
 
@@ -13,6 +23,7 @@
     padding: 10px 10px;
     font-size: medium;
     border-radius: 5px;
+    visibility: hidden;
 }
 
 @media screen and (max-width:767px) {
@@ -23,6 +34,24 @@
         padding: 10px 10px;
         font-size: small;
         border-radius: 5px;
+        visibility: hidden;
+    }
+
+    .conform{
+        display:none;
+    }
+    .QRcode {
+        display: none;
+    }
+
+    .heading {
+        display: none;
+    }
+    
+    .Merror {
+        display: block;
+        margin-top: 100px;
+        font-size: small;
     }
 
     .container{
@@ -32,16 +61,22 @@
 
 @media screen and (max-width:480px) {
     .QRcode {
-        display: none;
+        margin-top: 50px;
+        display: inline-block;
     }
 
     .Merror {
-        display: block;
-        margin-top: 100px;
+        display: none;
+        
     }
 
     .heading {
-        display: none;
+        display: block;
+        margin-top: 50px;
+    }
+
+    .conform{
+        display:block;
     }
     
     .button3{
@@ -51,6 +86,7 @@
         padding: 10px 10px;
         font-size: x-small;
         border-radius: 5px;
+        visibility: visible;
     }
 
     .container{
