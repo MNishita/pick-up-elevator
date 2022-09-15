@@ -67,6 +67,11 @@
     font-weight: 700;
 }
 
+.Merror {
+    margin-top: -20px;
+    margin-bottom: 80px;
+}
+
  .button2{
     visibility:hidden;
 }
@@ -152,10 +157,15 @@
         width: 92%;
         margin: 20px 5px;
     }
+
+    .Merror {
+        display: none;
+    }
     
     .button2{
         padding: 12px 70px; 
         margin: 20px;
+        margin-bottom: 150px;
         background:#CC0000;
         border: #CC0000;
         color: white;
