@@ -11,48 +11,35 @@
 
 .details{
     display: flex;
-    margin: 0 30px;
+    margin: 0 20px;
+}
+
+.EachItem {
+    width: 65%;
 }
 
 .section-1, .section-2{
     display: flex;
     background-color: #fafafa;
-    margin: 0 10px;
+    margin: 10px 10px;
     padding: 10px;
-}
-
-.section-1 {
-    width: 70%;
-}
-
-.section-1 .title {
-    width: 80%;
-    display: flex;
 }
 
 .section-1 .left {
     text-align: left;
-    width: 60%;
+    width: 80%;
     margin: 10px 10px 0px 50px;
 }
 
-.section-1 .right {
-    margin: 10px 0px 0px 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.payment {
-    margin-top: 70px;;
-    margin-bottom: 15px;
-    margin-left: 15px;
+.right {
+    display: none;
 }
 
 .section-2 {
-    flex-direction: column;
     flex-wrap: wrap;
+    flex-direction: column;
     width: 30%;
+    height: 40%;
 }
 
 .text{
@@ -62,7 +49,7 @@
 }
 
 #bottom {
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 10px;
     font-weight: 700;
 }
@@ -76,101 +63,53 @@
     visibility:hidden;
 }
 
-@media screen and (max-width:860px) {
-    .container{
-        flex:0.8;
-        font-size: 17px;
-    }
-
+@media screen and (max-width:580px) {
+    
     .details{
         display: block;
-        margin: 10px 20px;
+        margin: 0 20px;
     }
     
-    .section-1, .section-2{
-        margin: 20px 0px;
+    .EachItem {
+        width: 100%;
     }
     
-    .section-1 {
-        width: 95%;
+    .right {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        padding: 10px 20px;
     }
 
-    .section-1 .title {
+    .right .status {
+        text-align: left;
+    }
+
+    .right .payment {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .section-2 {
         width: 90%;
     }
-
-    .section-1 .image img {
-        height: 120px;
-        width: 120px;
-    }
-
-    .section-1 .left {
-        margin: 10px 10px 0px 20px;
-    }
-
-    .section-1 .right {
-        margin: 10px 0px 0px 10px;
-        width: 45%;
-    }
     
-    .section-2 {
-        width: 95%;
-    }
-}
-
-@media screen and (max-width:540px) {
-    .container{
-        font-size: 13px;
-    }
-
-    .details{
-        margin: 10px 10px;
-    }
-
-    .section-1{
-        width: 92%;
-        display: block;
-        margin: 0px 5px;
-    }
-
-    .section-1 .image img {
-        height: 90px;
-        width: 90px;
-    }
-    
-    .section-1 .left {
-        width: 100%;
-        margin: 10px 0px 0px 40px;
-    }
-    
-    .section-1 .right {
-        width: 85%;
-        justify-content: space-between;
-        margin: auto;
-    }
-
-    .status,.payment  {
-        margin: 15px;
-    }
-
-    .section-2 {
-        width: 92%;
-        margin: 20px 5px;
-    }
-
     .Merror {
-        display: none;
+       display: none;
     }
     
     .button2{
-        padding: 12px 70px; 
+        padding: 12px 50px; 
         margin: 20px;
-        margin-bottom: 150px;
         background:#CC0000;
         border: #CC0000;
         color: white;
         border-radius: 5px; 
         cursor: pointer;
         visibility: visible;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        margin-left: -100px;
     }
 }

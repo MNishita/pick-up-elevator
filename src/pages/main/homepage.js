@@ -3,7 +3,7 @@ import "./homepage.css";
 import MyImage from "../../assets/Heart-Target.svg";
 import { useNavigate} from 'react-router-dom';
 import {useState} from 'react';
-import { useQuery } from "@tanstack/react-query";
+import Footer from '../../components/bottombar';
 import { getOrders } from '../../services/getOrders/index'
 import { valid } from "../../helpers/homePage";
 
@@ -68,6 +68,7 @@ function Homepage() {
                     Search
                 </button>
             </div>
+        <Footer/>
         </div>
     )
 }
