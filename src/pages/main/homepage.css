@@ -1,176 +1,116 @@
 .main-container {
     margin: 0px 50px;
-    margin-top: -120px;
+    margin-top: -90px;
 }
 
 .form-group {
     padding: 10px;
-    margin-top: -120px;
+    margin-top: -100px;
 }
 
 .choose {
     height: 40px;
-    width: 130px;
-    font-size: 19px;
+    width: 120px;
+    font-size: 17px;
     font-weight: 300;
 }
 
 .form-text {
     width: 300px;
     height: 35px;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .button1 {
-    padding: 10px 100px;
+    padding: 8px 100px;
     margin: 30px;
     background: #CC0000;
     border: #f6f6f6;
     color: white;
-    font-size: 23px;
+    font-size: 20px;
+    border-radius: 5px;
     font-weight: 300;
+    cursor: pointer;
 }
 
-button:disabled{
-    font-size: 22px;
-    padding: 10px 100px; 
-    margin: 20px;
+.button1:disabled{
     background: #797979;
-    border: #f6f6f6;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    
 }
 
 .error{
     color: #f80707;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 17px;
 }
-@media screen and (max-width:767px) {
+
+@media screen and (max-width:550px) {
     .main-container {
-        margin: 0px 10px;
-        margin-top: -50px;
-        font-size: small;
-        cursor: pointer;
+        margin: 0px 20px;
+        margin-top: -110px;
     }
-    
+
     .form-group {
-        padding: 10px;
-        margin-top: -100px;
-        font-size: small;
+        margin-top: -120px;
     }
 
     .logo {
-        height: 360px;
-        width: 360px;
-        font-size: small;
+        width: 400px;
+        height: 400px;
+    }
+
+    .choose {
+        height: 35px;
+        font-size: 16px;
     }
     
     .form-text {
-        width: 200px;
-        height: 25px;
-        font-size: small;
-    }
-
-    .choose{
-        height: 30px;
-        width: 110px;
-        font-size: small;
-        font-weight: 300;
-
+        width: 260px;
+        height: 29px;
+        font-size: 16px;
     }
 
     .button1 {
-        padding: 5px 50px;
-        margin: 20px auto;
-        font-size: small;
-        background: #CC0000;
-        border: #f6f6f6;
-        color: white;
-        font-weight: 300;
-        cursor: pointer;
-    }
-
-    button:disabled{
-        font-size: small;
-        padding: 5px 50px; 
-        margin: 20px auto;
-        background: #797979;
-        border: #f6f6f6;
-        color: white;
-        border-radius: 5px;
-        cursor: pointer;
-        
+        padding: 9px 70px;
+        font-size: 17px;
     }
 
     .error{
-        font-size: small;
-        font-weight: 400;
+        font-size: 16px;
     }
 }
 
 @media screen and (max-width:480px) {
+
     .main-container {
-        margin: 0px 10px;
-        margin-top: -50px;
-        font-size: x-small;
-        cursor: pointer;
-    }
-    
-    .form-group {
-        padding: 10px;
-        margin-top: -100px;
-        font-size: x-small;
+        margin: 0px 20px;
+        margin-top: -70px;
     }
 
     .logo {
-        height: 360px;
-        width: 360px;
-        font-size: x-small;
-    }
-    
-    .form-text {
-        width: 200px;
-        height: 25px;
-        font-size: 15px;
+        width: 300px;
+        height: 320px;
     }
 
-    .choose{
+    .choose {
         height: 30px;
-        width: 110px;
-        font-size: 15px;
-        font-weight: 300;
+        width: 90px;
+        font-size: 13px;
+    }
 
+    .form-text {
+        width: 180px;
+        height: 25px;
+        font-size: 14px;
     }
 
     .button1 {
-        padding: 5px 25px;
-        margin: 10px auto;
-        font-size: x-small;
-        background: #CC0000;
-        border: #f6f6f6;
-        color: white;
-        font-weight: 300;
-        cursor: pointer;
-    }
-
-    button:disabled{
-        font-size: x-small;
-        padding: 5px 25px; 
-        margin: 10px auto;
-        background: #797979;
-        border: #f6f6f6;
-        color: white;
-        border-radius: 5px;
-        cursor: pointer;
-        
+        padding: 8px 60px;
+        margin: 20px;
+        font-size: 15px;
     }
 
     .error{
-        font-size: x-small;
-        font-weight: 400;
+        font-size: 14px;
     }
 }
 

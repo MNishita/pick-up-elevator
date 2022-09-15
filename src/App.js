@@ -28,7 +28,7 @@ function App() {
             <Route path='/homepage' element={<Homepage />} />
             {/* <Route path='/order' element={<Order />} /> */}
             <Route path='/order/:customerId' element={<Order />} />
-            <Route path='/qr/order_id/:orderId/customer_id/:customerId' element={<QRgererator />} />
+            <Route path='/qr/:orderId/:customerId' element={<QRgererator />} />
             <Route path='/*' element={<PageNotFound />} />
           </Routes>
         </Router>

@@ -23,7 +23,7 @@ import { updateDelivery } from "../../services/postDelivery";
     if(isFetched) {
       url = data.data.image_code;
     }
-    console.log(data)
+
     const qrcode = (
       <QRCodeCanvas
         value={url}
@@ -41,9 +41,8 @@ import { updateDelivery } from "../../services/postDelivery";
     return (
       <>
       <div className="container">
-      <h2 className="heading">Scan the QR Code at pickup store</h2>
-        <h4 className="Merror">Please open in mobile to generate QR</h4>
-        <p className="QRcode">{qrcode}</p>
+      <h2>Scan the QR Code at pickup store</h2>
+        <p>{qrcode}</p>
         <h3>Click to confirm delivery</h3>
         <button className="button3" onClick={() =>{
           mutate({
@@ -63,7 +62,6 @@ import { updateDelivery } from "../../services/postDelivery";
           Confirm Delivery
         </button>
       </div>
-      <ConfirmDelivery/>
       </>
     );
 }

@@ -1,18 +1,17 @@
 .container{
     flex:0.8;
+    font-size: 17px;
 }
 
 .head {
     text-align: left;
-    padding: 10px 50px;
+    padding: 10px 40px;
     font-weight: 700;
-    font-size: medium;
 }
 
 .details{
     display: flex;
     margin: 0 30px;
-    font-size: medium;
 }
 
 .section-1, .section-2{
@@ -23,17 +22,22 @@
 }
 
 .section-1 {
+    width: 70%;
+}
+
+.section-1 .title {
     width: 80%;
+    display: flex;
 }
 
 .section-1 .left {
     text-align: left;
-    width: 70%;
+    width: 60%;
     margin: 10px 10px 0px 50px;
 }
 
 .section-1 .right {
-    margin: 10px 0px 0px 70px;
+    margin: 10px 0px 0px 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -48,7 +52,7 @@
 .section-2 {
     flex-direction: column;
     flex-wrap: wrap;
-    width: 20%;
+    width: 30%;
 }
 
 .text{
@@ -64,221 +68,99 @@
 }
 
  .button2{
-    font-size: medium;
-    padding: 12px 70px; 
-    margin: 20px;
-    background:#CC0000;
-    border: #CC0000;
-    color: white;
-    border-radius: 5px; 
-    cursor: pointer;
     visibility:hidden;
-} 
-
-.button2:disabled{
-    font-size: medium;
-    padding: 12px 70px; 
-    margin: 20px;
-    background: #cc0000;
-    border: #f6f6f6;
-    color: #f6f6f6;
-    border-radius: 5px;
-    cursor: pointer;
-    
-}
-.tooltip:hover{
-    background-color: aqua;
 }
 
-
-@media screen and (max-width:767px) {
-
-    .button2{
-        font-size: small;
-        padding: 6px 40px; 
-        margin: 10px;
-        background:#CC0000;
-        border: #CC0000;
-        color: white;
-        border-radius: 5px; 
-        cursor: pointer;
-        visibility:hidden;
-    } 
-    
-    .button2:disabled{
-        font-size: small;
-        padding: 6px 40px; 
-        margin: 10px;
-        background: #cc0000;
-        border: #f6f6f6;
-        color: #f6f6f6;
-        border-radius: 5px;
-        cursor: pointer;
-        
-    }
-
-    .head {
-        margin: 5px;
-        text-align: center;
-        padding: 5px 20px;
-        font-weight: 700;
-        font-size: small;
-    }
-
-    .details{
-        display: inline;
-        margin: 0 5px;
-    }
-
-    .section-1, .section-2{
-        margin: 10px auto;
-        padding: 10px 15px;
-    }
-
-    .section-1 {
-        width: 85%;
-        flex-wrap: wrap;
-    }
-
-    .section-1 .left {
-        width: 40%;
-        margin: 10px 30px;
-    }
-
-    .section-1 .right {
-        margin: 0 auto;
-        width: 70%;
-    }
-
-    .status {
-        margin-top: 8px;
-    }
-
-    .payment {
-        margin: 10px;
-    }
-
-    .section-2 {
-        width: 85%;
-    }
-
-    .text{
-        margin: 0 5px;
-        padding: 5px;
-    }
-
-    #bottom {
-        margin-top: 20px;
-        margin-bottom: 5px;
-        font-weight: 700;
-    }
-
-    /* .button2 {
-        padding: 10px 50px;
-        margin: 5px auto;
-    } */
-
-}
-
-@media screen and (max-width:480px) {
-
-    .button2{
-        font-size: x-small;
-        padding: 6px 40px; 
-        margin: 10px;
-        background:#CC0000;
-        border: #CC0000;
-        color: white;
-        border-radius: 5px; 
-        cursor: pointer;
-        visibility:visible;
-    } 
-    
-    .button2:disabled{
-        font-size: x-small;
-        padding: 6px 40px; 
-        margin: 10px;
-        background: #cc0000;
-        border: #f6f6f6;
-        color: #f6f6f6;
-        border-radius: 5px;
-        cursor: pointer;
-        
-    }
-
+@media screen and (max-width:860px) {
     .container{
-        font-size: x-small;
-    }
-    .head {
-        margin: 5px;
-        text-align: center;
-        padding: 3px 10px;
-        font-weight: 700;
-        font-size: x-small;
+        flex:0.8;
+        font-size: 17px;
     }
 
     .details{
-        display: inline;
-        margin: 0 5px;
-        font-size: x-small;
+        display: block;
+        margin: 10px 20px;
     }
-
+    
     .section-1, .section-2{
-        margin: 10px auto;
-        padding: 10px 15px;
-        font-size: x-small;
+        margin: 20px 0px;
+    }
+    
+    .section-1 {
+        width: 95%;
     }
 
-    .section-1 {
-        width: 85%;
-        flex-wrap: wrap;
-        font-size: x-small;
+    .section-1 .title {
+        width: 90%;
+    }
+
+    .section-1 .image img {
+        height: 120px;
+        width: 120px;
     }
 
     .section-1 .left {
-        width: 40%;
-        margin: 10px 30px;
-        font-size: x-small;
+        margin: 10px 10px 0px 20px;
     }
 
     .section-1 .right {
-        margin: 0 auto;
-        width: 70%;
-        font-size: x-small;
+        margin: 10px 0px 0px 10px;
+        width: 45%;
+    }
+    
+    .section-2 {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:540px) {
+    .container{
+        font-size: 13px;
     }
 
-    .status {
-        margin-top: 8px;
-        font-size: x-small;
+    .details{
+        margin: 10px 10px;
     }
 
-    .payment {
-        margin: 10px;
-        font-size: x-small;
+    .section-1{
+        width: 92%;
+        display: block;
+        margin: 0px 5px;
+    }
+
+    .section-1 .image img {
+        height: 90px;
+        width: 90px;
+    }
+    
+    .section-1 .left {
+        width: 100%;
+        margin: 10px 0px 0px 40px;
+    }
+    
+    .section-1 .right {
+        width: 85%;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .status,.payment  {
+        margin: 15px;
     }
 
     .section-2 {
-        width: 85%;
-        font-size: x-small;
+        width: 92%;
+        margin: 20px 5px;
     }
-
-    .text{
-        margin: 0 5px;
-        padding: 5px;
-        font-size: x-small;
+    
+    .button2{
+        padding: 12px 70px; 
+        margin: 20px;
+        background:#CC0000;
+        border: #CC0000;
+        color: white;
+        border-radius: 5px; 
+        cursor: pointer;
+        visibility: visible;
     }
-
-    #bottom {
-        margin-top: 20px;
-        margin-bottom: 5px;
-        font-weight: 700;
-        font-size: x-small;
-    }
-
-    /* .button2 {
-        padding: 10px 50px;
-        margin: 5px auto;
-    } */
-
 }
-
