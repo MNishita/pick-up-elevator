@@ -64,11 +64,11 @@ function Order() {
                         </div>
                     </section>
                     <br></br>
-                    <div className="Merror">
-                        <h4>Please open in mobile to generate QR</h4>
-                    </div>
                 </div>
                 })}
+                <div className="Merror">
+                    <h4>Please open in mobile to generate QR</h4>
+                </div>
                 <div>
                     <button className="button2" disabled={order.payment_status==='UNPAID'} onClick={() => {navigate(`/qr/${order.order_id}/${order.customer_id}`)}}>
                         Generate Pickup code
