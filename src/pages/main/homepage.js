@@ -50,7 +50,7 @@ function Homepage() {
     return(
         <div className="main-container">
             <div>
-                <img className="logo" src={MyImage} alt="Heart" height={400} width={450}></img>
+                <img className="logo" src={MyImage} alt="Heart"></img>
             </div>
             <div>
                 <div className="form-group">

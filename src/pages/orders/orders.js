@@ -29,8 +29,8 @@ function Order() {
                     <div className="EachItem">
                     {order.order_items.map(items => {return <div key={items.id}>
                         <div className="section-1">
-                            <div className="image">
-                                <img src={Image} alt="" height={140} width={140}></img>
+                            <div >
+                                <img src={Image} className="image" alt="" height={140} width={140}></img>
                             </div>
                             <div className="left">
                                 <span>{items.item_description}</span>

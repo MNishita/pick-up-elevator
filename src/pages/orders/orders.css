@@ -69,7 +69,10 @@
         display: block;
         margin: 0 20px;
     }
-    
+    .image{
+        height: 90px;
+        width: 90px;
+    }
     .EachItem {
         width: 100%;
     }
