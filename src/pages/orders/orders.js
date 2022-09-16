@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./orders.css";
 import Image from "../../assets/image.svg";
 import Tick from "../../assets/tick.svg";
-import Wrong from "../../assets/wrong.svg"
+import Cross from "../../assets/cross.svg"
 import { useNavigate,useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getOrders } from '../../services/getOrders/index';
@@ -20,6 +20,13 @@ function Order() {
     if (isError) return <div>{error.message}</div>
 
     if(!data) navigate("/error")
+
+    function checkStatus (status){
+        if(status==="PAID"||status==="Paid"|| status==="paid"){
+            return true;
+        }
+        return false;
+    }
 
     if(data){
         getOrders({customerId}.customerId).then((response) =>{
@@ -61,10 +68,12 @@ function Order() {
                             </div>
                             <br></br>
                             <div className="payment">
-                                <span>Payment Type : Card</span>
+                                <span>Payment Type : { checkStatus(order.payment_status)? "Card" : " - "}</span>
                                 <span>{order.payment_status}
-                                    <img style={{ paddingLeft: 15 }} src={Tick} height={17} alt="" ></img>
-                                    {/* <img style={{ paddingLeft: 15 }} src={Wrong} height={17} alt="" ></img> */}
+                                    <img style={{ paddingLeft: 15 }} src={checkStatus(order.payment_status) ? Tick : Cross} height={17} alt="" >
+
+                                    </img>
+                                    
                                 </span>
                             </div>
 
