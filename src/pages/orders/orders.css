@@ -24,6 +24,10 @@
     margin: 10px 10px;
     padding: 10px;
 }
+.image{
+    height: 140px;
+    width: 140px;
+}
 
 .section-1 .left {
     text-align: left;
@@ -91,7 +95,10 @@
     .right .status {
         text-align: left;
     }
-
+    .image{
+        height: 90px;
+        width: 90px;
+    }
     .right .payment {
         display: flex;
         justify-content: space-between;
