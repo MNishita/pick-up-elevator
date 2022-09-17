@@ -15,7 +15,7 @@
 }
 
 .EachItem {
-    width: 65%;
+    width: 45%;
 }
 
 .section-1, .section-2{
@@ -31,7 +31,7 @@
 
 .section-1 .left {
     text-align: left;
-    width: 80%;
+    width: 60%;
     margin: 10px 10px 0px 50px;
 }
 
