@@ -47,7 +47,8 @@ import { updateDelivery } from "../../services/postDelivery";
         delivery_status : "DELIVERED",
         pickup_date : displaydate
       })
-      .then((response)=>{});
+      .then((response)=>{console.log(response)});
+      navigate('/thankyou')
     }
 
     if (isLoading) return <div>Loading...</div>
