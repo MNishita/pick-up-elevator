@@ -28,6 +28,11 @@ const Images=[
         id:6,
         product:'cosmetics',
         location:'/assets/cosmetics.svg'
+    },
+    {
+        id:7,
+        product:'Bicycle',
+        location:'/assets/Bicycle.svg'
     }
 ]
 
