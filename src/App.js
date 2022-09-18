@@ -11,6 +11,7 @@ import QRgererator from './pages/QRdetails/Qr';
 
 import { QueryClientProvider, QueryClient} from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import ThankYou from './pages/thankYou/thankyou';
 
 const queryClient = new QueryClient()
 
@@ -28,6 +29,7 @@ function App() {
             {/* <Route path='/order' element={<Order />} /> */}
             <Route path='/order/:customerId' element={<Order />} />
             <Route path='/qr/order_id/:orderId/customer_id/:customerId' element={<QRgererator />} />
+            <Route path='/thankyou' element={<ThankYou />} />
             <Route path='/*' element={<PageNotFound />} />
           </Routes>
         </Router>

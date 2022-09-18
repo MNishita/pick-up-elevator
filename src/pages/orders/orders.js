@@ -46,8 +46,8 @@ function Order() {
                     <div className="EachItem">
                     {order.order_items.map(items => {return <div key={items.id}>
                         <div className="section-1">
-                            <div className="image">
-                                <img src={Image} alt="" height={140} width={140}></img>
+                            <div >
+                                <img className="image" src={Image} alt="" height={140} width={140}></img>
                             </div>
                             <div className="left">
                                 <span>{items.item_description}</span>
@@ -68,13 +68,11 @@ function Order() {
                             </div>
                             <br></br>
                             <div className="payment">
-                                <span>Payment Type : { checkStatus(order.payment_status)? "Card" : " - "}</span>
-                                <span>{order.payment_status}
-                                    <img style={{ paddingLeft: 15 }} src={checkStatus(order.payment_status) ? Tick : Cross} height={17} alt="" >
-
-                                    </img>
+                                <div>Payment Type : { checkStatus(order.payment_status)? "Card" : " - "}</div><br></br>
+                                <div>{order.payment_status}
+                                    <img style={{ paddingLeft: 15 }} src={checkStatus(order.payment_status) ? Tick : Cross} height={17} alt="" />
                                     
-                                </span>
+                                </div>
                             </div>
 
                         </div>
@@ -102,7 +100,7 @@ function Order() {
                     <h4>Please open in mobile to generate QR</h4>
                 </div>
                 <div>
-                    <button className={name} disabled={order.payment_status==='UNPAID'} onClick={() => {navigate(`/qr/order_id/${order.order_id}/customer_id/${order.customer_id}`)}}>
+                    <button className={name} id='but' disabled={order.payment_status==='UNPAID'} onClick={() => {navigate(`/qr/order_id/${order.order_id}/customer_id/${order.customer_id}`)}}>
                         Generate Pickup code
                     </button>  
                 </div>

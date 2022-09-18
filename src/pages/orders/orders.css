@@ -15,7 +15,7 @@
 }
 
 .EachItem {
-    width: 65%;
+    width: 45%;
 }
 
 .section-1, .section-2{
@@ -24,15 +24,22 @@
     margin: 10px 10px;
     padding: 10px;
 }
+.image{
+    height: 140px;
+    width: 140px;
+}
 
 .section-1 .left {
     text-align: left;
-    width: 80%;
+    width: 60%;
     margin: 10px 10px 0px 50px;
 }
 
 .right {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px 20px;
 }
 
 .section-2 {
@@ -63,6 +70,10 @@
     visibility:hidden;
 }
 
+#but{
+    visibility:hidden
+}
+
 @media screen and (max-width:580px) {
     
     .details{
@@ -84,7 +95,10 @@
     .right .status {
         text-align: left;
     }
-
+    .image{
+        height: 90px;
+        width: 90px;
+    }
     .right .payment {
         display: flex;
         justify-content: space-between;
@@ -102,7 +116,7 @@
        display: none;
     }
     
-    .Many{
+    #but.Many{
         padding: 12px 50px; 
         margin: 20px;
         background:#CC0000;
@@ -117,7 +131,7 @@
         margin-left: -100px; */
     }
 
-    .One{
+    #but.One{
         padding: 12px 50px; 
         margin: 20px;
         background:#CC0000;
@@ -134,5 +148,8 @@
 
     .button2:disabled {
         background-color: grey;
+    }
+    #but:disabled{
+        background-color: gray;
     }
 }
