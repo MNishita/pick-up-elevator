@@ -1,13 +1,13 @@
 import React from "react";
 import './thankyou.css';
-import MyImage from "../../assets/Heart-Target.svg";
-import Target from "../../assets/TargetLogo.svg";
+// import MyImage from "../../assets/Heart-Target.svg";
+// import Target from "../../assets/TargetLogo.svg";
 import { useNavigate,useParams } from "react-router-dom";
 function ThankYou(){
     const navigate= useNavigate()
    return(
     <div>
-        <img src={Target} alt="" height={150} weight={150}/>
+        <img src='assets/TargetLogo.svg' alt="" height={150} weight={150}/>
         <h3>Your comfort is our priority</h3>
         <h3>We hope you enjoyed shopping with Target</h3>
         <h2>Thank You Visit Again</h2>

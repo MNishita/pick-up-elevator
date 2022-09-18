@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./orders.css";
-import Image from "../../assets/image.svg";
-import Tick from "../../assets/tick.svg";
-import Cross from "../../assets/cross.svg"
+import Images from '../../images';
 import { useNavigate,useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getOrders } from '../../services/getOrders/index';
@@ -12,8 +10,16 @@ function Order() {
     let navigate = useNavigate();
     const {customerId} =useParams();
     const [name,setName] = useState("One");
-
+     
     const {isLoading, data, isError, error } = useQuery(['orders'], async()=>await getOrders({customerId}.customerId));
+    // console.log(data)
+
+    function isSame(value1,value2){
+        
+        if(value1===value2)
+            return true
+        return false
+    }
 
     if (isLoading) return <div>Loading...</div>
 
@@ -47,7 +53,13 @@ function Order() {
                     {order.order_items.map(items => {return <div key={items.id}>
                         <div className="section-1">
                             <div className="image">
-                                <img src={Image} alt="" height={140} width={140}></img>
+                                {Images.map(image=>{ return  <div key={image.id}>             
+                                        {isSame(image.product,items.item_description)?
+                                            <img src={image.location} alt="Not available" height={200} width={200}/> : 
+                                            null  } 
+                                </div>
+                                })}
+                                
                             </div>
                             <div className="left">
                                 <span>{items.item_description}</span>
@@ -70,7 +82,7 @@ function Order() {
                             <div className="payment">
                                 <div>Payment Type : { checkStatus(order.payment_status)? "Card" : " - "}</div><br></br>
                                 <div>{order.payment_status}
-                                    <img style={{ paddingLeft: 15 }} src={checkStatus(order.payment_status) ? Tick : Cross} height={17} alt="" />
+                                    <img style={{ paddingLeft: 15 }} src={checkStatus(order.payment_status) ? '/assets/tick.svg' : '/assets/cross.svg'} height={17} alt="" />
                                     
                                 </div>
                             </div>

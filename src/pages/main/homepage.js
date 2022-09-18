@@ -1,6 +1,6 @@
 import React from "react";
 import "./homepage.css";
-import MyImage from "../../assets/Heart-Target.svg";
+// import MyImage from "../../assets/Heart-Target.svg";
 import { useNavigate} from 'react-router-dom';
 import {useState} from 'react';
 import Footer from '../../components/bottombar';
@@ -50,7 +50,7 @@ function Homepage() {
     return(
         <div className="main-container">
             <div>
-                <img className="logo" src={MyImage} alt="Heart" height={400} width={450}></img>
+                <img className="logo" src='assets/Heart-Target.svg' alt="Heart" height={400} width={400}></img>
             </div>
             <div>
                 <div className="form-group">
