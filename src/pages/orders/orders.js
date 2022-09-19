@@ -112,7 +112,7 @@ function Order() {
                     <h4>Please open in mobile to generate QR</h4>
                 </div>
                 <div>
-                    <button className={name} id='but' disabled={order.payment_status==='UNPAID'} onClick={() => {navigate(`/qr/order_id/${order.order_id}/customer_id/${order.customer_id}`)}}>
+                    <button className={name} disabled={order.payment_status==='UNPAID'} onClick={() => {navigate(`/qr/order_id/${order.order_id}/customer_id/${order.customer_id}`)}}>
                         Generate Pickup Code
                     </button>  
                 </div>

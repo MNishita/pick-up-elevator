@@ -15,18 +15,18 @@
 }
 
 .EachItem {
-    width: 45%;
+    width: 50%;
 }
 
 .section-1, .section-2{
     display: flex;
-    background-color: #fafafa;
+    background-color: #f3f0f0;
     margin: 10px 10px;
     padding: 10px;
 }
-.image{
-    height: 140px;
-    width: 140px;
+.image img{
+    height: 170px;
+    width: 170px;
 }
 
 .section-1 .left {
@@ -66,12 +66,8 @@
     margin-bottom: 80px;
 }
 
- .button2{
+ .One,.Many{
     visibility:hidden;
-}
-
-#but{
-    visibility:hidden
 }
 
 @media screen and (max-width:580px) {
@@ -95,9 +91,9 @@
     .right .status {
         text-align: left;
     }
-    .image{
-        height: 90px;
-        width: 90px;
+    .image img{
+        height: 150px;
+        width: 150px;
     }
     .right .payment {
         display: flex;
@@ -116,7 +112,7 @@
        display: none;
     }
     
-    #but.Many{
+    .Many{
         padding: 12px 50px; 
         margin: 20px;
         background:#CC0000;
@@ -131,7 +127,7 @@
         margin-left: -100px; */
     }
 
-    #but.One{
+    .One{
         padding: 12px 50px; 
         margin: 20px;
         background:#CC0000;
@@ -146,10 +142,7 @@
         margin-left: -100px;
     }
 
-    .button2:disabled {
+    .One:disabled,.Many:disabled {
         background-color: grey;
-    }
-    #but:disabled{
-        background-color: gray;
     }
 }

@@ -1,38 +1,43 @@
 const Images=[
     {
         id:1,
-        product:'lotion',
-        location:'/assets/lotion.svg'
+        product:'Volley Ball',
+        location:'/assets/volleyball.svg'
     },
     {
         id:2,
-        product:'shampoo',
-        location:'/assets/shampoo.svg'
+        product:'Basket Ball',
+        location:'/assets/basket-ball.svg'
     },
     {
         id:3,
+        product:'Hair Dryer',
+        location:'/assets/Hairdryer.svg'
+    },
+    {
+        id:4,
+        product:'Wallet',
+        location:'/assets/Wallet.svg'
+    },
+    {
+        id:5,
         product:'Powder',
         location:'/assets/Powder.svg'
     },
     {
-        id:4,
-        product:'milk',
-        location:'/assets/milk.svg'
-    },
-    {
-        id:5,
-        product:'apple',
-        location:'/assets/apple.svg'
-    },
-    {
         id:6,
-        product:'cosmetics',
-        location:'/assets/cosmetics.svg'
+        product:'Hair Band Floral',
+        location:'/assets/hairband.svg'
     },
     {
         id:7,
-        product:'Bicycle',
-        location:'/assets/Bicycle.svg'
+        product:'Kajal',
+        location:'/assets/kajal.svg'
+    },
+    {
+        id:8,
+        product:'Saffola Masala Oats',
+        location:'/assets/oats.svg'
     }
 ]
 
