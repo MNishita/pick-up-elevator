@@ -113,7 +113,7 @@ function Order() {
                 </div>
                 <div>
                     <button className={name} id='but' disabled={order.payment_status==='UNPAID'} onClick={() => {navigate(`/qr/order_id/${order.order_id}/customer_id/${order.customer_id}`)}}>
-                        Generate Pickup code
+                        Generate Pickup Code
                     </button>  
                 </div>
             </div>
