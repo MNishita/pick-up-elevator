@@ -16,7 +16,7 @@ function Order() {
 
     function isSame(value1,value2){
         
-        if(value1===value2)
+        if(value1.toUpperCase()===value2.toUpperCase())
             return true
         return false
     }
@@ -62,11 +62,13 @@ function Order() {
                                 
                             </div>
                             <div className="left">
-                                <span>{items.item_description}</span>
+                                <span className="heading">{items.item_description}</span>
                                 <br></br>
-                                <span>Quantity : {items.item_quantity}</span>
+                                <span className="heading">Quantity :  </span>
+                                <span> {items.item_quantity}</span>
                                 <br></br>
-                                <span>Price : ${items.item_price}</span>
+                                <span className="heading">Price :  </span>
+                                <span> ${items.item_price}</span>
                             </div>
                         </div>
                     </div>
