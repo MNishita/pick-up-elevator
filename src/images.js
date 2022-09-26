@@ -40,7 +40,7 @@ const Images=[
         location:'/assets/scale.svg'
     },
     {
-        id:9,
+        id:10,
         product:'eraser',
         location:'/assets/eraser.svg'
     }
