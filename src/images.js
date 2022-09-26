@@ -33,7 +33,18 @@ const Images=[
         id:7,
         product:'Bicycle',
         location:'/assets/Bicycle.svg'
+    },
+    {
+        id:8,
+        product:'scale',
+        location:'/assets/scale.svg'
+    },
+    {
+        id:9,
+        product:'eraser',
+        location:'/assets/eraser.svg'
     }
+    
 ]
 
 export default Images;
