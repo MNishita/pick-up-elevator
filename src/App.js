@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { QueryClientProvider, QueryClient} from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import './App.css';
 
 //Components
@@ -8,9 +10,6 @@ import Homepage from './pages/main/homepage';
 import Order from './pages/orders/orders';
 import PageNotFound from './components/error/404Error';
 import QRgererator from './pages/QRdetails/Qr';
-
-import { QueryClientProvider, QueryClient} from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import ThankYou from './pages/thankYou/thankyou';
 
 const queryClient = new QueryClient()
@@ -19,7 +18,6 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-
       <div className="App">
         <Header />
         <Router>

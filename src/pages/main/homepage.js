@@ -1,6 +1,5 @@
 import React from "react";
 import "./homepage.css";
-// import MyImage from "../../assets/Heart-Target.svg";
 import { useNavigate} from 'react-router-dom';
 import {useState} from 'react';
 import Footer from '../../components/bottombar';

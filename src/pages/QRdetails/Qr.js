@@ -47,7 +47,7 @@ import { updateDelivery } from "../../services/postDelivery";
         delivery_status : "DELIVERED",
         pickup_date : displaydate
       })
-      .then((response)=>{console.log(response)});
+      .then((response)=>{console.log(response.data.delivery_status)});
       navigate('/thankyou')
     }
 
@@ -56,6 +56,7 @@ import { updateDelivery } from "../../services/postDelivery";
     if (isError) return <div>{error.message}</div>
 
     if(!data) navigate("/error")
+
 
     return (
       <>
